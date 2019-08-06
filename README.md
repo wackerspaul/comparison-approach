@@ -119,21 +119,24 @@ all(Annotation$GeneID == rownames(tstatdata$Compound_B)) # [1] TRUE
 # annotation is the gene annotation file
 # geneid is the column name in the annotation file to match the annotation file with the rownames of the T-statistics
 analysis.result <- run.analysis.fun(tstats=tstatdata, 
-                                             n=50, 
-                                             annotation=Annotation, 
-                                             geneid="geneENTREZ")
+                                    n=50, 
+                                    annotation=Annotation, 
+                                    geneid="geneENTREZ")
 
 # To extract a result table, use the function getResult.fun()
 # analysis.object is object returned from run.analysis.fun()
 # table is the result table to extract (options: "Master", "BestMatch", "BestMatchOrdered")
 # metric is the scoring metric to extract (options: "Score", "TstatScore", "NumberOfHits", "All")
-result.table <- getResult.fun(analysis.object = analysis.result, table = "BestMatchOrdered", metric = "All")
+result.table <- getResult.fun(analysis.object = analysis.result, 
+                              table = "BestMatchOrdered", 
+                              metric = "All")
 View(result.table)
 
 # To extract a genelist for a specific match, use the function getGenes.fun()
 # analysis.object is object returned from run.analysis.fun()
 # match.name is the name the match to extract (i.e. the match names in the column "MatchName" from the table BestMatchOrdered and metric All)
-genelist <- getGenes.fun(analysis.object = analysis.result, match.name = "Compound_B_Mid-Compound_C_Mid")
+genelist <- getGenes.fun(analysis.object = analysis.result, 
+                         match.name = "Compound_B_Mid-Compound_C_Mid")
 View(genelist)
 
 ```

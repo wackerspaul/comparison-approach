@@ -21,6 +21,7 @@ The comparison approach requires the following files as input:
   | Gene_1 | -1.02          | -1.50          | -1.20           |
   | Gene_2 | 1.28           | 2.05           | 3.10            |
   | Gene_3 | 4.25           | 5.10           | 4.60            |
+  | etc.   | etc.           | etc.           | etc.            |
 
 * A gene annotation file  
   * Information about the genes in the analysis. The gene annotation file should contain a column matching the gene identifiers in the T-statistic files.
@@ -30,6 +31,7 @@ The comparison approach requires the following files as input:
   | Gene_1 | GeneSymbol_1 | GeneName_1 | Pathway_1 |
   | Gene_2 | GeneSymbol_2 | GeneName_2 | Pathway_1 |
   | Gene_3 | GeneSymbol_3 | GeneName_3 | Pathway_2 |
+  | etc.   | etc.         | etc.       | etc.      |
   
  *Note the column geneID of the gene annotation file matching the column geneID in the T-statistics file*
 

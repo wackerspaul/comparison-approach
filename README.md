@@ -123,7 +123,7 @@ all(Annotation$GeneID == rownames(tstatdata$Compound_B)) # [1] TRUE
 analysis.result <- run.analysis.fun(tstats=tstatdata, 
                                     n=50, 
                                     annotation=Annotation, 
-                                    geneid="geneENTREZ")
+                                    geneid="geneID")
 
 # To extract a result table, use the function getResult.fun()
 # analysis.object is object returned from run.analysis.fun()

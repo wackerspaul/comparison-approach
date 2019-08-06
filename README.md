@@ -113,7 +113,7 @@ tstatdata <- read.data.fun(directory = "./data/")
 
 # Make sure the gene order is consistent in the gene annotation and T-statistic files
 all(rownames(tstatdata$Compound_A) == rownames(tstatdata$Compound_B)) # [1] TRUE
-all(Annotation$GeneID == rownames(tstatdata$Compound_B)) # [1] TRUE
+all(Annotation$geneID == rownames(tstatdata$Compound_B)) # [1] TRUE
 
 # Use the function run.analysis.fun() to the analysis
 # tstats is the object containing the T-statistics of the compounds (object returned from read.data.fun())

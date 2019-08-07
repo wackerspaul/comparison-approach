@@ -15,78 +15,97 @@ The comparison approach requires the following files as input:
 * Per compound a T-statistic file  
   * First column should be the gene identifiers  
   * Following colum(s) the T-statistics of the compound (per concentration or time point)
+    &nbsp;
+  
+    | geneID | Compound_A_Low | Compound_A_Mid | Compound_A_High |
+    |:------:|:--------------:|:--------------:|:---------------:|
+    | Gene_1 | -1.02          | -1.50          | -1.20           |
+    | Gene_2 | 1.28           | 2.05           | 3.10            |
+    | Gene_3 | 4.25           | 5.10           | 4.60            |
+    | etc.   | etc.           | etc.           | etc.            |
 
-  | geneID | Compound_A_Low | Compound_A_Mid | Compound_A_High |
-  |:------:|:--------------:|:--------------:|:---------------:|
-  | Gene_1 | -1.02          | -1.50          | -1.20           |
-  | Gene_2 | 1.28           | 2.05           | 3.10            |
-  | Gene_3 | 4.25           | 5.10           | 4.60            |
-  | etc.   | etc.           | etc.           | etc.            |
-
+  
+  &nbsp;
+  
 * A gene annotation file  
   * Information about the genes in the analysis. The gene annotation file should contain a column matching the gene identifiers in the T-statistic files.
+    &nbsp;
   
-  | geneID | GeneSymbol   | GeneName   | Pathway   |
-  |:------:|:------------:|:----------:|:---------:|
-  | Gene_1 | GeneSymbol_1 | GeneName_1 | Pathway_1 |
-  | Gene_2 | GeneSymbol_2 | GeneName_2 | Pathway_1 |
-  | Gene_3 | GeneSymbol_3 | GeneName_3 | Pathway_2 |
-  | etc.   | etc.         | etc.       | etc.      |
+    | geneID | GeneSymbol   | GeneName   | Pathway   |
+    |:------:|:------------:|:----------:|:---------:|
+    | Gene_1 | GeneSymbol_1 | GeneName_1 | Pathway_1 |
+    | Gene_2 | GeneSymbol_2 | GeneName_2 | Pathway_1 |
+    | Gene_3 | GeneSymbol_3 | GeneName_3 | Pathway_2 |
+    | etc.   | etc.         | etc.       | etc.      |
   
- *Note the column geneID of the gene annotation file matching the column geneID in the T-statistics file*
-
+   *Note the column geneID of the gene annotation file matching the column geneID in the T-statistics file*
+  
+  &nbsp;
+  
 ## Output
 The comparison approach has the following tables as output:
-  * A master table, an all versus all table where each compound per concentration/timepoint/.. is compared to all the other compounds concentration/timepoint.. :       
+  * A master table, an all versus all table where each compound per concentration/timepoint/.. is compared to all the other compounds concentration/timepoint.. : 
+  
+    &nbsp;
+  
+    |               | Compound_A_Low | Compound_A_Mid | Compound_A_High | Compound_B_Low | Compound_B_Mid | Compound_B_High | Compound_C_Low | Compound_C_Mid | Compound_C_High |             
+    |:-------------:|:--------------:|:--------------:|:---------------:|:--------------:|:--------------:|:---------------:|:--------------:|:--------------:|:---------------:|
+    Compound_A_Low  | NA             | NA             | NA              | 0              | 0              | 0               | 0              | 0              | 0               | 
+    Compound_A_Mid  | NA             | NA             | NA              | 0              | 0              | 0               | 0              | 27             | 0               | 
+    Compound_A_High | NA             | NA             | NA              | 0              | 43             | 47              | 0              | 0              | 2               | 
+    Compound_B_Low  | 0              | 0              | 0               | NA             | NA             | NA              | 436            | 518            | 395             | 
+    Compound_B_Mid  | 0              | 0              | 43              | NA             | NA             | NA              | 313            | 995            | 929             | 
+    Compound_B_High | 0              | 0              | 47              | NA             | NA             | NA              | 317            | 890            | 949             | 
+    Compound_C_Low  | 0              | 0              | 0               | 436            | 313            | 317             | NA             | NA             | NA              | 
+    Compound_C_Mid  | 0              | 27             | 0               | 518            | 995            | 890             | NA             | NA             | NA              | 
+    Compound_C_High | 0              | 0              | 2               | 395            | 929            | 949             | NA             | NA             | NA              | 
 
-|               | Compound_A_Low | Compound_A_Mid | Compound_A_High | Compound_B_Low | Compound_B_Mid | Compound_B_High | Compound_C_Low | Compound_C_Mid | Compound_C_High | 
-|:-------------:|:--------------:|:--------------:|:---------------:|:--------------:|:--------------:|:---------------:|:--------------:|:--------------:|:---------------:|
-Compound_A_Low  | NA             | NA             | NA              | 0              | 0              | 0               | 0              | 0              | 0               | 
-Compound_A_Mid  | NA             | NA             | NA              | 0              | 0              | 0               | 0              | 27             | 0               | 
-Compound_A_High | NA             | NA             | NA              | 0              | 43             | 47              | 0              | 0              | 2               | 
-Compound_B_Low  | 0              | 0              | 0               | NA             | NA             | NA              | 436            | 518            | 395             | 
-Compound_B_Mid  | 0              | 0              | 43              | NA             | NA             | NA              | 313            | 995            | 929             | 
-Compound_B_High | 0              | 0              | 47              | NA             | NA             | NA              | 317            | 890            | 949             | 
-Compound_C_Low  | 0              | 0              | 0               | 436            | 313            | 317             | NA             | NA             | NA              | 
-Compound_C_Mid  | 0              | 27             | 0               | 518            | 995            | 890             | NA             | NA             | NA              | 
-Compound_C_High | 0              | 0              | 2               | 395            | 929            | 949             | NA             | NA             | NA              | 
-
-
+  &nbsp;
+  
   * A best match table, for each compound comparison the best match is selected over the concentrations/timepoints:
   
-|            | Compound_A | Compound_B | Compound_C |
-|:----------:|:----------:|:----------:|:----------:|
-| Compound_A | NA         | 47         | 27         |
-| Compound_B | 47         | NA         | 995        |
-| Compound_C | 27         | 995        | NA         |
+    |            | Compound_A | Compound_B | Compound_C |
+    |:----------:|:----------:|:----------:|:----------:|
+    | Compound_A | NA         | 47         | 27         |
+    | Compound_B | 47         | NA         | 995        |
+    | Compound_C | 27         | 995        | NA         |
+
+  &nbsp;
+  
   
   * An ordered best match table: 
 
-| Compound_A     | Compound_B      | Compound_C      |
-|:--------------:|:---------------:|:---------------:|
-| Compound_B: 47 | Compound_C: 995 | Compound_B: 995 |
-| Compound_C: 27 | Compound_A: 47  | Compound_A: 27  |
-| Compound_A: NA | Compound_B: NA  | Compound_C: NA  |
+    | Compound_A     | Compound_B      | Compound_C      |
+    |:--------------:|:---------------:|:---------------:|
+    | Compound_B: 47 | Compound_C: 995 | Compound_B: 995 |
+    | Compound_C: 27 | Compound_A: 47  | Compound_A: 27  |
+    | Compound_A: NA | Compound_B: NA  | Compound_C: NA  |
+
+  &nbsp;
 
   * A detailed list of the best matches:
   
-| Comparison            | MatchName                       | Score | TstatisticScore | NumberOfHits |
-|:---------------------:|:-------------------------------:|:-----:|:---------------:|:------------:|
-| Compound_B-Compound_C | Compound_B_Mid-Compound_C_Mid   | 995   | 765             | 26           |
-| Compound_A-Compound_B | Compound_A_High-Compound_B_High | 47    | 29              | 1            |
-| Compound_A-Compound_C | Compound_A_Mid-Compound_C_Mid   | 27    | 17              | 1            |
+    | Comparison            | MatchName                       | Score | TstatisticScore | NumberOfHits |
+    |:---------------------:|:-------------------------------:|:-----:|:---------------:|:------------:|
+    | Compound_B-Compound_C | Compound_B_Mid-Compound_C_Mid   | 995   | 765             | 26           |
+    | Compound_A-Compound_B | Compound_A_High-Compound_B_High | 47    | 29              | 1            |
+    | Compound_A-Compound_C | Compound_A_Mid-Compound_C_Mid   | 27    | 17              | 1            |
+
+  &nbsp;
 
   * A genelist of the hits:
   
-  | geneID | GeneSymbol   | GeneName   | Pathway   | score.over.compounds | score.tstat | regulation |
-|:------:|:------------:|:----------:|:---------:|:--------------------:|:-----------:|:----------:|
-| Gene_1 | GeneSymbol_1 | GeneName_1 | Pathway_1 | 9                    | 14.63373    |  -         |
-| Gene_2 | GeneSymbol_2 | GeneName_2 | Pathway_1 | 94                   | 38.62147    |  +         |
-| Gene_3 | GeneSymbol_3 | GeneName_3 | Pathway_2 | 86                   | 37.48938    |  +         |
-| Gene_4 | GeneSymbol_4 | GeneName_4 | Pathway_3 | 82                   | 29.59908    |  +         |
-| Gene_5 | GeneSymbol_5 | GeneName_5 | Pathway_1 | 46                   | 28.75784    |  +         |
-| etc    | etc          | etc        | etc       | etc                  | etc         | etc        |
-| etc    | etc          | etc        | etc       | etc                  | etc         | etc        |
+    | geneID | GeneSymbol   | GeneName   | Pathway   | score.over.compounds | score.tstat | regulation |
+    |:------:|:------------:|:----------:|:---------:|:--------------------:|:-----------:|:----------:|
+    | Gene_1 | GeneSymbol_1 | GeneName_1 | Pathway_1 | 9                    | 14.63373    |  -         |
+    | Gene_2 | GeneSymbol_2 | GeneName_2 | Pathway_1 | 94                   | 38.62147    |  +         |
+    | Gene_3 | GeneSymbol_3 | GeneName_3 | Pathway_2 | 86                   | 37.48938    |  +         |
+    | Gene_4 | GeneSymbol_4 | GeneName_4 | Pathway_3 | 82                   | 29.59908    |  +         |
+    | Gene_5 | GeneSymbol_5 | GeneName_5 | Pathway_1 | 46                   | 28.75784    |  +         |
+    | etc    | etc          | etc        | etc       | etc                  | etc         | etc        |
+    | etc    | etc          | etc        | etc       | etc                  | etc         | etc        |
+
+ &nbsp;
 
 ## Run the analysis
 

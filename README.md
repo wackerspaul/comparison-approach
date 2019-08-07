@@ -7,6 +7,8 @@ If the genes are regulated in the same direction, the scores of these genes are 
 
 ## Flowdiagram of the comparison approach
 
+![alt text](./images/Flowdiagram.png "Flowdiagram of the comparison approach")
+
 ## Setup
 
 ## Input

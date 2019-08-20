@@ -20,7 +20,7 @@ https://github.com/wackerspaul/comparison-approach
 
 
 ## Input
-The comparison approach requires the following files as input:
+The comparison approach requires the following (tab-delimited) files as input:
 
 * Per compound a T-statistic file  
   * First column should be the gene identifiers  

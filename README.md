@@ -1,15 +1,23 @@
 # comparison approach
 
 ## Description
-Tutorial of the comparison approach as used Heusinkveld et. al. 2018 and Luijten et. al. 2019
-In brief, the comparison approach selects per compound the top 'n' (n=50 by default) most regulated genes based on absolute T-statistics, and assigns subsequently a linear descending score to the highest ranked genes over the compared compounds.
-If the genes are regulated in the same direction, the scores of these genes are summed, resulting in a "match score".
+The comparison approach is a toxicogenomics tool to match compounds based on their modes of action. This github repository is a tutorial of the comparison approach as used in Heusinkveld et. al. 2018 and Luijten et. al. 2019 In brief, the comparison approach selects per compound the top 'n' (n=50 by default) most regulated genes based on their absolute T-statistics, and assigns subsequently a linear descending score to the highest ranked genes over the compared compounds. If the genes are regulated in the same direction, the scores of these genes are summed, which result in a "match score" between compounds.
 
 ## Flowdiagram of the comparison approach
 
 ![alt text](./images/Flowdiagram.png "Flowdiagram of the comparison approach")
 
 ## Setup
+#### Command line:   
+```
+git clone  https://github.com/wackerspaul/comparison-approach.git
+```
+
+#### R-studio:
+File -> new project -> version control -> git   
+Repository URL:   
+https://github.com/wackerspaul/comparison-approach
+
 
 ## Input
 The comparison approach requires the following files as input:
@@ -121,11 +129,11 @@ options(stringsAsFactors = FALSE)
 setwd("/path/to/working/directory/")
 
 # Load functions
-source("./scripts/functions.R")
+source("./script/functions.R")
 ls() # you should now see 10 functions (indicated by .fun in the name)
 
-# Read gene annotation file
-Annotation <- read.delim("./Info/GeneAnnotation.txt")
+# Read the gene-annotation file
+Annotation <- read.delim("./info/GeneAnnotation.txt")
 
 # Read the T-statistic data using the function read.data.fun()
 # directory is the path to the directory where the T-statistics files per compound are located

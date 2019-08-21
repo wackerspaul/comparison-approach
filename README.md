@@ -38,7 +38,7 @@ The comparison approach requires the following (tab-delimited) files as input:
   
   &nbsp;
   
-* A gene annotation file  
+* A gene-annotation file  
   * Information about the genes in the analysis. The gene annotation file should contain a column matching the gene identifiers in the T-statistic files.
     &nbsp;
   
@@ -51,7 +51,7 @@ The comparison approach requires the following (tab-delimited) files as input:
   
    *Note the column geneID of the gene annotation file matching the column geneID in the T-statistics file*
  
- *An example gene annotation file is available in the info folder of this repository*   
+ *An example gene-annotation file is available in the info folder of this repository*   
   &nbsp;
   
 ## Output
@@ -127,8 +127,8 @@ rm(list=ls())
 graphics.off()
 options(stringsAsFactors = FALSE)
 
-# Set work-directory
-setwd("/path/to/working/directory/")
+# If necessary, set work-directory:
+setwd("/path/to/working/directory/comparison-approach/")
 
 # Load functions
 source("./script/functions.R")
@@ -174,6 +174,15 @@ View(genelist)
 
 ```
 
+## References:   
+Application of the comparison approach to open TG-GATEs: A useful toxicogenomics tool for detecting modes of action in chemical risk assessment.   
+*Heusinkveld et.al. Food Chem Toxicol. 2018 Nov;121:115-123. doi: 10.1016/j.fct.2018.08.007. PMID: 30096367*   
+
+A novel toxicogenomics-based approach to categorize (non-)genotoxic carcinogens.   
+*Schaap MM et. al., Arch Toxicol. 2015 Dec;89(12):2413-27. doi: 10.1007/s00204-014-1368-6. PMID: 25270620*   
+
+Dissecting modes of action of non-genotoxic carcinogens in primary mouse hepatocytes.      
+*Schaap MM et. al., Arch Toxicol. 2012 Nov;86(11):1717-27. doi: 10.1007/s00204-012-0883-6, PMID: 22710402*  
 
 
 

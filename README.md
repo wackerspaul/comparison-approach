@@ -56,7 +56,7 @@ The comparison approach requires the following (tab-delimited) files as input:
   
 ## Output
 The comparison approach has the following tables as output:
-  * A master table, an all versus all table where each compound per concentration/timepoint/.. is compared to all the other compounds concentration/timepoint.. : 
+  * A master table, an all-versus-all table where each compound per concentration/timepoint/.. is compared to all the other compounds per concentration/timepoint/.. : 
   
     &nbsp;
   
@@ -74,7 +74,7 @@ The comparison approach has the following tables as output:
 
   &nbsp;
   
-  * A best match table, for each compound comparison the best match is selected over the concentrations/timepoints:
+  * A best-match table, for each compound comparison the best match is selected over the concentrations/timepoints:
   
     |            | Compound_A | Compound_B | Compound_C |
     |:----------:|:----------:|:----------:|:----------:|
@@ -85,7 +85,7 @@ The comparison approach has the following tables as output:
   &nbsp;
   
   
-  * An ordered best match table: 
+  * An ordered best-match table: 
 
     | Compound_A     | Compound_B      | Compound_C      |
     |:--------------:|:---------------:|:---------------:|
@@ -95,7 +95,7 @@ The comparison approach has the following tables as output:
 
   &nbsp;
 
-  * A detailed list of the best matches:
+  * A detailed list of the best-matches:
   
     | Comparison            | MatchName                       | Score | TstatisticScore | NumberOfHits |
     |:---------------------:|:-------------------------------:|:-----:|:---------------:|:------------:|

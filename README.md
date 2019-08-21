@@ -1,7 +1,7 @@
 # comparison approach
 
 ## Description
-The comparison approach is a R-based toxicogenomics tool to match compounds based on their modes of action. This github repository is a tutorial of the comparison approach as used in Heusinkveld et. al. 2018 and Luijten et. al. 2019 In brief, the comparison approach selects per compound the top 'n' (n=50 by default) most regulated genes based on their absolute T-statistics, and assigns subsequently a linear descending score to the highest ranked genes over the compared compounds. If the genes are regulated in the same direction, the scores of these genes are summed, which result in a "match score" between compounds.
+The comparison approach is a R-based toxicogenomics tool to match compounds based on their modes of action. This github repository is a tutorial of the comparison approach as used in Heusinkveld et. al. 2018 and Luijten et. al. 2019 In brief, the comparison approach selects per compound the top 'n' (n=50 by default) most regulated genes based on their absolute T-statistics, and assigns subsequently a linear descending score to the highest ranked genes over the compared compounds. If the genes are regulated in the same direction, the scores of these genes are summed, resulting in a "match score" between compounds.
 
 ## Flowdiagram of the comparison approach
 
@@ -34,6 +34,7 @@ The comparison approach requires the following (tab-delimited) files as input:
     | Gene_3 | 4.25           | 5.10           | 4.60            |
     | etc.   | etc.           | etc.           | etc.            |
 
+*An example dataset is available in the data folder of this repository*   
   
   &nbsp;
   
@@ -49,7 +50,8 @@ The comparison approach requires the following (tab-delimited) files as input:
     | etc.   | etc.         | etc.       | etc.      |
   
    *Note the column geneID of the gene annotation file matching the column geneID in the T-statistics file*
-  
+ 
+ *An example gene annotation file is available in the info folder of this repository*   
   &nbsp;
   
 ## Output
